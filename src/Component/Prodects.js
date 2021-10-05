@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Product from './Pages/Product';
-function Prodects(props) {
-    const {prodects}=props;
+import { Authcontext } from '../Store/Context';
+
+
+function Prodects() {
+    const authcontext = useContext(Authcontext);
+    const {prodectfilter} = authcontext;
 
      return (
         <div className="col-9 prodects">
             <div className="row">
-                {prodects.map(item=>
+                {prodectfilter.map(item=>
                     <Product key={item.id} item={item}/>
                 )}
             </div>

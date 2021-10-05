@@ -98,7 +98,7 @@ const filterPrice = (event) =>{
 
 /*==This Function is based on changing the value of
      the variable for the value of the input==*/
-     
+
 const setRangefilter = (event) =>{
   const value = parseInt(event.target.value);
   setrange(value)
@@ -106,6 +106,7 @@ const setRangefilter = (event) =>{
 
 /*==This Function is based on clear filtering
    products based on Price==*/
+   
 const filterpclear =(e)=>{
   const filteredProudect = prodects.filter
   (item => item.price <=  e);
