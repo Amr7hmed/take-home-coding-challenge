@@ -12,40 +12,8 @@ class Data{
     }
 }
 
+export const categoryApi = new Data('http://test-api.edfa3ly.io/category');
+export const prodectsApi = new Data('http://test-api.edfa3ly.io/product');
 
-export default function Productsapi() {
-
-    const categoryApi = new Data('http://test-api.edfa3ly.io/category');
-    const prodectsApi = new Data('http://test-api.edfa3ly.io/product');
-        
-    const authcontext = useContext(Authcontext);
-    const {setcategory,setprodects} = authcontext;
-
-//Adding data from the api to the variable Category
-useEffect(() => {
-        categoryApi.getData()
-            .then(response => {
-                setcategory(
-                    response.data
-                )
-            }).catch(error => {
-                alert("Not Connect")
-              });
-    }, []);
-    
-//Adding data from the api to the variable Prodects
-useEffect(() => {
-        prodectsApi.getData()
-            .then(response => {
-                setprodects(
-                    response.data
-                )
-            }).catch(error => {
-                alert("Not Connect")
-              });
-    }, []);
-    
-
-return (<div></div>)}
 
 

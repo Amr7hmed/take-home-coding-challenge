@@ -3,7 +3,6 @@ import Home from './Component/Home';
 import Navbar from './Navbar';
 import { Contextprovider } from './Store/Context';
 import './App.css';
-import Productsapi from './Store/Dataapi';
 
 class App extends Component {
     render() {
@@ -14,7 +13,6 @@ class App extends Component {
                     <div className="container">
                             <Home/>
                     </div>
-                    <Productsapi/>
                 </Contextprovider>
               </div>
         )

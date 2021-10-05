@@ -1,4 +1,5 @@
 import React, { useEffect,useState} from 'react';
+import {categoryApi,prodectsApi} from './Dataapi';
 
 export const Authcontext=React.createContext();
 
@@ -19,6 +20,30 @@ const [cheackinput,setcheackinput]=useState(true);
 //This variable is for Range Price
 const [range,setrange]=useState(0);
 
+//Adding data from the api to the variable Category
+useEffect(() => {
+   categoryApi.getData()
+       .then(response => {
+           setcategory(
+               response.data
+           )
+       }).catch(error => {
+           alert("Not Connect")
+         });
+}, [categoryApi]);
+
+//Adding data from the api to the variable Prodects
+useEffect(() => {
+   prodectsApi.getData()
+       .then(response => {
+           setprodects(
+               response.data
+           )
+       }).catch(error => {
+           alert("Not Connect")
+         });
+}, [prodectsApi]);
+
 
 //Add Data to Filter Array
 useEffect(() => {
@@ -28,6 +53,7 @@ useEffect(() => {
 
 /*==This Function is based on filtering
    products based on Categorys==*/
+
 const filterCategorys = (buttonid) =>{
     const filteredProudect = prodects.filter
     (item => item.categoryId ===  buttonid);
@@ -36,6 +62,7 @@ const filterCategorys = (buttonid) =>{
 
 /*==This Function is based on filtering
    products based on Color==*/
+
 const filterColor = (event) =>{
     setcheackinput(true);
     const filteredProudect = prodects.filter
@@ -45,6 +72,7 @@ const filterColor = (event) =>{
 
 /*==This Function is based on filtering
    products based on Rating==*/
+
 const filterRating = (buttonrating) =>{
     const filteredProudect = prodects.filter
     (item => item.rating ===  buttonrating);
@@ -53,6 +81,7 @@ const filterRating = (buttonrating) =>{
 
 /*==This Function is based on clear filtering
    products based on color==*/
+
 const clearcolorselect =()=>{
   setcheackinput(false);
   setprodectfilter(prodects);
@@ -60,6 +89,7 @@ const clearcolorselect =()=>{
 
 /*==This Function is based on filtering
    products based on price==*/
+
 const filterPrice = (event) =>{
   const filteredProudect = prodects.filter
   (item => item.price <=  event);
@@ -68,6 +98,7 @@ const filterPrice = (event) =>{
 
 /*==This Function is based on changing the value of
      the variable for the value of the input==*/
+     
 const setRangefilter = (event) =>{
   const value = parseInt(event.target.value);
   setrange(value)
