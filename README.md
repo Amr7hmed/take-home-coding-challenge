@@ -26,3 +26,10 @@ Instead of using "Redux" because I found it would be easier to read it and make 
 Create an input element of type "number" and link them together, allowing the possibility to modify them at the same time.
 - The problem of data display speed has transformed thinking of many solutions to solve the problem of slow data display, but time did not seek to reach more efficient solutions
 ```
+
+### Explain what you did
+```
+- For products and items, I called it from their Api link
+And I made a system calling them in the "class" so that if any other elements were added or the link was modified, no changes were made or a new "function" was created, but a copy of the base "class" was created.
+- For filtering in general to "Category, Color, Price, Rating". A new "array" element has been created, added to products after filtering and then displayed 
+```

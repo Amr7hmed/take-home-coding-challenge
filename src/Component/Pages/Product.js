@@ -2,7 +2,7 @@ import React from 'react';
 import  Stars  from './Stars';
 
 
-function Product(props) {
+export default function Product(props) {
     const {item}=props;
     const {color,name,image,price,rating}=item;
     return (
@@ -22,7 +22,4 @@ function Product(props) {
                 </div>
         </div>
         </div>
-    )
-}
-
-export default Product
+    )}

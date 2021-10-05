@@ -3,7 +3,7 @@ import Product from './Pages/Product';
 import { Authcontext } from '../Store/Context';
 
 
-function Prodects() {
+export default function Prodects() {
     const authcontext = useContext(Authcontext);
     const {prodectfilter} = authcontext;
 
@@ -15,7 +15,4 @@ function Prodects() {
                 )}
             </div>
         </div>
-    )
-}
-
-export default Prodects;
+    )}

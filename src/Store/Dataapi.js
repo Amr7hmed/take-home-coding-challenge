@@ -1,5 +1,3 @@
-import React, { useContext, useEffect } from 'react';
-import { Authcontext } from './Context';
 import axios from 'axios';
 
 class Data{
